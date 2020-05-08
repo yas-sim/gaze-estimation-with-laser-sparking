@@ -1,4 +1,4 @@
-# Gaze Estimation 2D Demo with Sparking Laser Beam ;-)
+# Gaze Estimation Demo with Sparking Laser Beam ;-)
 This program demonstrates how to use the [`gaze-estimation-adas-0002`](https://docs.openvinotoolkit.org/latest/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html) model of the OpenVINO [Open Model Zoo](https://docs.openvinotoolkit.org/latest/_models_intel_index.html) with [Intel(r) Distribution of OpenVINO(tm) toolkit](https://software.intel.com/content/www/us/en/develop/tools/openvino-toolkit.html).  
 This program finds the faces in an image, detect the landmark points on the detected faces to find the eyes, estimate the head rotation angle, and estimates the gaze orientation.  
 This program draws the gaze lines like the laser beams. Also the program detects the collision of the laser beams and draws sparkles at the crossing point of the laser beams (for fun).
