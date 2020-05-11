@@ -42,8 +42,8 @@ The demo depends on:
 To install all the required Python modules you can use:
 
 ``` sh
-(Linux) pip3 install -r requirements.txt
-(Win10) pip install -r requirements.txt
+(Linux) pip3 install -r requirements.in
+(Win10) pip install -r requirements.in
 ```
 
 ### 2. Download DL models from OMZ
