@@ -30,7 +30,7 @@ Please see more information about `Model downloader` [here](../../../tools/downl
 
 
 ### 0. Prerequisites
-- **OpenVINO 2020.2**
+- **OpenVINO 2021.3**
   - If you haven't installed it, go to the OpenVINO web page and follow the [*Get Started*](https://software.intel.com/en-us/openvino-toolkit/documentation/get-started) guide to do it.  
 
 ### 1. Install dependencies  
@@ -72,7 +72,7 @@ The application draws the results on the input image.
 
 ## Tested Environment  
 - Windows 10 x64 1909 and Ubuntu 18.04 LTS  
-- Intel(r) Distribution of OpenVINO(tm) toolkit 2020.2  
+- Intel(r) Distribution of OpenVINO(tm) toolkit 2021.3  
 - Python 3.6.5 x64  
 
 ## See Also  

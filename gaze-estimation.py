@@ -90,16 +90,16 @@ def main():
         ie = IECore()
 
         net_det  = ie.read_network(model=model_det+'.xml', weights=model_det+'.bin')
-        input_name_det  = next(iter(net_det.inputs))                            # Input blob name "data"
-        input_shape_det = net_det.inputs[input_name_det].shape                  # [1,3,384,672]
+        input_name_det  = next(iter(net_det.input_info))                        # Input blob name "data"
+        input_shape_det = net_det.input_info[input_name_det].tensor_desc.dims   # [1,3,384,672]
         out_name_det    = next(iter(net_det.outputs))                           # Output blob name "detection_out"
         exec_net_det    = ie.load_network(network=net_det, device_name='CPU', num_requests=1)
         del net_det
 
         # Preparation for landmark detection
         net_lm = ie.read_network(model=model_lm+'.xml', weights=model_lm+'.bin')
-        input_name_lm  = next(iter(net_lm.inputs))                              # Input blob name 
-        input_shape_lm = net_lm.inputs[input_name_lm].shape                     # [1,3,60,60]
+        input_name_lm  = next(iter(net_lm.input_info))                          # Input blob name 
+        input_shape_lm = net_lm.input_info[input_name_lm].tensor_desc.dims      # [1,3,60,60]
         out_name_lm    = next(iter(net_lm.outputs))                             # Output blob name "embd/dim_red/conv"
         out_shape_lm   = net_lm.outputs[out_name_lm].shape                      # 3x [1,1]
         exec_net_lm    = ie.load_network(network=net_lm, device_name='CPU', num_requests=1)
@@ -107,8 +107,8 @@ def main():
 
         # Preparation for headpose detection
         net_hp = ie.read_network(model=model_hp+'.xml', weights=model_hp+'.bin')
-        input_name_hp  = next(iter(net_hp.inputs))                              # Input blob name
-        input_shape_hp = net_hp.inputs[input_name_hp].shape                     # [1,3,60,60]
+        input_name_hp  = next(iter(net_hp.input_info))                          # Input blob name
+        input_shape_hp = net_hp.input_info[input_name_hp].tensor_desc.dims      # [1,3,60,60]
         out_name_hp    = next(iter(net_hp.outputs))                             # Output blob name
         out_shape_hp   = net_hp.outputs[out_name_hp].shape                      # [1,70]
         exec_net_hp    = ie.load_network(network=net_hp, device_name='CPU', num_requests=1)
